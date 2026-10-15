@@ -743,23 +743,21 @@ p {
 
 .contact {
   padding: 49px 0 80px;
-  scroll-margin-top: 90px;
 }
 
 .contact .divider {
   margin: 26px auto 50px;
 }
 
-.contact__row {
-  display: grid;
-  grid-template-columns: 5fr 7fr;
-  column-gap: 5.5%;
-  row-gap: 40px;
-  align-items: start;
-}
-
 .contact__details {
-  padding: 28px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 24px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 40px;
   border: 1px solid var(--light-blue);
   border-bottom-width: 2px;
   border-radius: 10px;
@@ -772,7 +770,7 @@ p {
 
 .contact-details {
   list-style: none;
-  margin: 24px 0 0;
+  margin: 0;
   padding: 0;
   font-size: 16px;
 }
@@ -805,69 +803,6 @@ p {
 
 .contact-details a[href^="mailto:"] {
   overflow-wrap: normal;
-}
-
-.contact-form__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.contact-form__full {
-  grid-column: 1 / -1;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #c9d6de;
-  border-radius: 6px;
-  background: var(--white);
-  font-family: var(--body-font);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 140px;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(20, 116, 184, 0.15);
-}
-
-.contact-form button {
-  margin-top: 24px;
-  vertical-align: top;
-  cursor: pointer;
-}
-
-.contact-form__status {
-  margin-top: 14px;
-  font-size: 15px;
-  color: var(--navy);
-}
-
-.contact-form__status:empty {
-  display: none;
 }
 
 /* ---------- Reviews ---------- */
@@ -1397,12 +1332,13 @@ p {
     padding-top: 20px;
   }
 
-  .contact__row {
-    grid-template-columns: 1fr;
-  }
-
   .help .divider {
     margin-bottom: 59px;
+  }
+
+  .contact__details {
+    grid-template-columns: 1fr;
+    max-width: 560px;
   }
 
   .help__cta {
@@ -1468,12 +1404,8 @@ p {
     padding: 30px 25px;
   }
 
-  .contact-form__grid {
-    grid-template-columns: 1fr;
-  }
-
   .contact__details {
-    padding: 24px 20px;
+    padding: 28px 24px;
   }
 
   .card-grid--maint {
