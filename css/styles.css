@@ -285,8 +285,10 @@ p {
 
 .hero {
   position: relative;
-  min-height: 426px;
-  padding: 36px 0 63px;
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+  padding: 36px 0;
   background: url("https://media.cwd-cdn.com/gc-handyman-solutions/images/hero.webp") center top / cover no-repeat;
 }
 
@@ -310,11 +312,6 @@ p {
   flex-wrap: wrap;
   gap: 12px 15px;
   margin-top: 20px;
-}
-
-.hero--page {
-  min-height: 0;
-  padding: 36px 0 146px;
 }
 
 .hero--about {
@@ -1368,6 +1365,14 @@ p {
   cursor: pointer;
 }
 
+/* ---------- Small desktop (1200px and below) ---------- */
+
+@media (max-width: 1200px) {
+  .hero {
+    min-height: 600px;
+  }
+}
+
 /* ---------- Tablet (980px and below) ---------- */
 
 @media (max-width: 980px) {
@@ -1441,9 +1446,8 @@ p {
     max-width: 60%;
   }
 
-  .hero,
-  .hero--page {
-    padding-bottom: 40px;
+  .hero {
+    min-height: 640px;
   }
 
   .hide-tablet {
@@ -1529,6 +1533,10 @@ p {
 
   .site-header__logo {
     width: 55%;
+  }
+
+  .hero {
+    min-height: 545px;
   }
 
   .hero__box,
