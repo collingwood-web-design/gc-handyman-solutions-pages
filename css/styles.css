@@ -151,6 +151,7 @@ p {
 .section-title {
   font-size: 24px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .divider {
@@ -290,9 +291,8 @@ p {
 }
 
 .hero__box {
-  width: calc(47.25% - 14px);
-  min-height: 317px;
-  padding: 40px 31px 9px 40px;
+  width: 47.25%;
+  padding: 40px 31px 40px 40px;
   background: rgba(255, 255, 255, 0.5);
 }
 
@@ -309,22 +309,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 15px;
-  margin-top: 17px;
+  margin-top: 20px;
 }
 
 .hero--page {
   min-height: 0;
   padding: 36px 0 146px;
-}
-
-.hero--page .hero__box {
-  width: 47.25%;
-  min-height: 0;
-  padding: 40px 31px 40px 40px;
-}
-
-.hero--page .hero__actions {
-  margin-top: 21px;
 }
 
 .hero--about {
@@ -344,14 +334,6 @@ p {
 .hero--contact {
   background-image: url("https://media.cwd-cdn.com/gc-handyman-solutions/images/contact-hero.webp");
   background-position: right center;
-}
-
-.hero--contact .hero__box {
-  width: 47.25%;
-}
-
-.hero--contact .hero__actions {
-  margin-top: 20px;
 }
 
 /* ---------- Tagline strip ---------- */
@@ -387,12 +369,11 @@ p {
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .marquee__track span {
   white-space: nowrap;
-  padding-right: 3rem;
   font-weight: 400;
   color: var(--navy);
   font-size: 17px;
@@ -553,7 +534,6 @@ p {
 }
 
 .maintenance .section-title {
-  text-transform: uppercase;
   color: var(--white);
 }
 
@@ -650,7 +630,7 @@ p {
 /* ---------- About ---------- */
 
 .about {
-  padding: 24px 0 6px;
+  padding: 24px 0 80px;
 }
 
 .about .divider {
@@ -659,6 +639,14 @@ p {
 
 .about__text {
   text-align: center;
+}
+
+.about__text p + p {
+  margin-top: 17px;
+}
+
+.about__cta {
+  margin-top: 35px;
 }
 
 /* ---------- Services page ---------- */
@@ -697,7 +685,7 @@ p {
   scroll-margin-top: 110px;
 }
 
-.svc-card h4 {
+.svc-card h3 {
   font-size: 19px;
   color: var(--blue);
 }
@@ -724,7 +712,7 @@ p {
 }
 
 .service-area--services .service-area__row {
-  padding-bottom: 48px;
+  padding-bottom: 80px;
 }
 
 .service-area--services .service-area__text ul {
@@ -738,7 +726,7 @@ p {
 /* ---------- Contact page ---------- */
 
 .help {
-  padding: 49px 0 71px;
+  padding: 49px 0 60px;
 }
 
 .help .divider {
@@ -753,11 +741,140 @@ p {
   margin-top: 74px;
 }
 
+.contact {
+  padding: 49px 0 80px;
+  scroll-margin-top: 90px;
+}
+
+.contact .divider {
+  margin: 26px auto 50px;
+}
+
+.contact__row {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  column-gap: 5.5%;
+  row-gap: 40px;
+  align-items: start;
+}
+
+.contact__details {
+  padding: 28px 24px;
+  border: 1px solid var(--light-blue);
+  border-bottom-width: 2px;
+  border-radius: 10px;
+}
+
+.contact__details h3 {
+  font-size: 20px;
+  color: var(--blue);
+}
+
+.contact-details {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.contact-details li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-details img {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  object-fit: contain;
+}
+
+.contact-details a {
+  min-width: 0;
+  color: var(--link-blue);
+  overflow-wrap: anywhere;
+}
+
+.contact-details a[href^="mailto:"] {
+  overflow-wrap: normal;
+}
+
+.contact-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.contact-form__full {
+  grid-column: 1 / -1;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #c9d6de;
+  border-radius: 6px;
+  background: var(--white);
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(20, 116, 184, 0.15);
+}
+
+.contact-form button {
+  margin-top: 24px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.contact-form__status {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--navy);
+}
+
+.contact-form__status:empty {
+  display: none;
+}
+
 /* ---------- Reviews ---------- */
 
 .reviews {
   border-top: 3px solid var(--blue);
-  padding: 32px 0 91px;
+  padding: 32px 0 80px;
 }
 
 .reviews .divider {
@@ -817,7 +934,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   margin-top: 14px;
   font-size: 14px;
   font-weight: 600;
@@ -825,6 +942,7 @@ p {
 }
 
 .reviews__links a {
+  padding: 3px 0;
   color: var(--link-blue);
   text-decoration: underline;
 }
@@ -939,8 +1057,8 @@ p {
 
 .review__more {
   display: none;
-  margin-top: 6px;
-  padding: 0;
+  margin-top: 2px;
+  padding: 4px 0;
   border: 0;
   background: none;
   font-family: inherit;
@@ -1031,13 +1149,14 @@ p {
   object-fit: contain;
 }
 
-.contact-list h4 {
+.contact-list h3 {
   font-size: 16px;
   color: var(--white);
   padding-bottom: 0;
 }
 
-.contact-list h4 a {
+.contact-list h3 a {
+  padding: 6px 0;
   color: var(--white);
 }
 
@@ -1101,6 +1220,7 @@ p {
 }
 
 .footer-bottom a {
+  padding: 4px 0;
   color: var(--navy);
   text-decoration: underline;
 }
@@ -1247,13 +1367,12 @@ p {
     background: rgba(0, 0, 0, 0.03);
   }
 
-  .hero__box,
-  .hero--page .hero__box,
-  .hero--contact .hero__box {
+  .hero__box {
     width: auto;
     max-width: 60%;
   }
 
+  .hero,
   .hero--page {
     padding-bottom: 40px;
   }
@@ -1278,12 +1397,8 @@ p {
     padding-top: 20px;
   }
 
-  .hero--contact {
-    padding-bottom: 0;
-  }
-
-  .help {
-    padding-bottom: 74px;
+  .contact__row {
+    grid-template-columns: 1fr;
   }
 
   .help .divider {
@@ -1346,22 +1461,19 @@ p {
     width: 55%;
   }
 
-  .hero__box {
+  .hero__box,
+  .hero--services .hero__box {
     max-width: 100%;
     background: rgba(255, 255, 255, 0.78);
-    padding: 30px 25px 20px;
-    min-height: 0;
+    padding: 30px 25px;
   }
 
-  .hero--page .hero__box {
-    max-width: 100%;
-    padding: 40px 31px 40px 40px;
-    background: rgba(255, 255, 255, 0.78);
+  .contact-form__grid {
+    grid-template-columns: 1fr;
   }
 
-  .hero--contact .hero__box {
-    max-width: 100%;
-    padding: 40px 31px 9px 40px;
+  .contact__details {
+    padding: 24px 20px;
   }
 
   .card-grid--maint {
@@ -1376,5 +1488,9 @@ p {
 @media (max-width: 479px) {
   .card-grid--4 {
     grid-template-columns: 1fr;
+  }
+
+  .contact-details a[href^="mailto:"] {
+    overflow-wrap: anywhere;
   }
 }
