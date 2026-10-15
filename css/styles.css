@@ -67,7 +67,8 @@ p {
   margin: 0 auto;
 }
 
-.show-phone {
+.show-phone,
+.show-tablet {
   display: none;
 }
 
@@ -311,21 +312,33 @@ p {
   margin-top: 17px;
 }
 
-.hero--about {
+.hero--page {
   min-height: 0;
   padding: 36px 0 146px;
-  background-image: url("https://media.cwd-cdn.com/gc-handyman-solutions/images/about-hero.webp");
-  background-position: right bottom;
 }
 
-.hero--about .hero__box {
+.hero--page .hero__box {
   width: 47.25%;
   min-height: 0;
   padding: 40px 31px 40px 40px;
 }
 
-.hero--about .hero__actions {
+.hero--page .hero__actions {
   margin-top: 21px;
+}
+
+.hero--about {
+  background-image: url("https://media.cwd-cdn.com/gc-handyman-solutions/images/about-hero.webp");
+  background-position: right bottom;
+}
+
+.hero--services {
+  background-image: url("https://media.cwd-cdn.com/gc-handyman-solutions/images/services-hero.webp");
+  background-position: right top;
+}
+
+.hero--services .hero__box {
+  background: rgba(255, 255, 255, 0.37);
 }
 
 /* ---------- Tagline strip ---------- */
@@ -633,6 +646,80 @@ p {
 
 .about__text {
   text-align: center;
+}
+
+/* ---------- Services page ---------- */
+
+.svc {
+  padding: 32px 0 67px;
+}
+
+.svc .divider {
+  margin: 26px auto 35px;
+}
+
+.svc__intro {
+  text-align: center;
+}
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5.5%;
+  row-gap: 30px;
+  margin-top: 20px;
+}
+
+.svc__intro + .svc-grid {
+  margin-top: 36px;
+}
+
+.svc-card {
+  border: 1px solid var(--light-blue);
+  border-bottom-width: 2px;
+  border-radius: 10px;
+  padding: 6px;
+  text-align: center;
+  overflow: hidden;
+  scroll-margin-top: 110px;
+}
+
+.svc-card h4 {
+  font-size: 19px;
+  color: var(--blue);
+}
+
+.svc-card ul {
+  margin: 0;
+  padding: 0 0 23px 17px;
+  list-style: disc inside;
+  line-height: 26px;
+  color: var(--blue);
+}
+
+.svc__cta {
+  margin-top: 57px;
+}
+
+.service-area__intro {
+  margin-bottom: 39px;
+  text-align: center;
+}
+
+.service-area--services .divider {
+  margin: 26px auto 58px;
+}
+
+.service-area--services .service-area__row {
+  padding-bottom: 48px;
+}
+
+.service-area--services .service-area__text ul {
+  padding-bottom: 17px;
+}
+
+.service-area--services .service-area__text p:last-child {
+  padding-bottom: 0;
 }
 
 /* ---------- Reviews ---------- */
@@ -1130,13 +1217,33 @@ p {
   }
 
   .hero__box,
-  .hero--about .hero__box {
+  .hero--page .hero__box {
     width: auto;
     max-width: 60%;
   }
 
-  .hero--about {
+  .hero--page {
     padding-bottom: 40px;
+  }
+
+  .hide-tablet {
+    display: none;
+  }
+
+  .show-tablet {
+    display: block;
+  }
+
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc {
+    padding-top: 28px;
+  }
+
+  .service-area--services {
+    padding-top: 20px;
   }
 
   .card-grid--4 {
@@ -1178,7 +1285,8 @@ p {
 /* ---------- Phone (767px and below) ---------- */
 
 @media (max-width: 767px) {
-  .hide-phone {
+  .hide-phone,
+  .show-tablet {
     display: none;
   }
 
@@ -1197,9 +1305,10 @@ p {
     min-height: 0;
   }
 
-  .hero--about .hero__box {
+  .hero--page .hero__box {
     max-width: 100%;
     padding: 40px 31px 40px 40px;
+    background: rgba(255, 255, 255, 0.78);
   }
 
   .card-grid--maint {
