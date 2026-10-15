@@ -1219,24 +1219,58 @@ p {
 
 .footer-bottom {
   position: relative;
+  overflow: hidden;
   background: var(--light-blue);
-  padding: 55px 0 27px;
+  padding: 44px 0 14px;
   text-align: center;
-  font-size: 14px;
-  line-height: 28.9px;
+  font-size: 13px;
+  line-height: 1.6;
   color: var(--navy);
 }
 
+/* Each tile is the wave plus its mirror image, so the drift loops without a seam. */
 .wave--footer-bottom {
   top: -1px;
-  height: 56px;
-  background-size: 100% 55px;
+  height: 38px;
+  overflow: hidden;
   transform: scale(-1, -1);
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100px' viewBox='0 0 1280 140' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e5267'%3E%3Cpath d='M1280 3.4C1050.59 18 1019.4 84.89 734.42 84.89c-320 0-320-84.3-640-84.3C59.4.59 28.2 1.6 0 3.4V140h1280z' fill-opacity='.3'/%3E%3Cpath d='M0 24.31c43.46-5.69 94.56-9.25 158.42-9.25 320 0 320 89.24 640 89.24 256.13 0 307.28-57.16 481.58-80V140H0z' fill-opacity='.5'/%3E%3Cpath d='M1280 51.76c-201 12.49-242.43 53.4-513.58 53.4-320 0-320-57-640-57-48.85.01-90.21 1.35-126.42 3.6V140h1280z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.wave--footer-bottom::before,
+.wave--footer-bottom::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  animation: wave-drift 60s linear infinite;
+}
+
+.wave--footer-bottom::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2560 140' preserveAspectRatio='none'%3E%3Cg fill='%232e5267'%3E%3Cpath d='M1280 3.4C1050.59 18 1019.4 84.89 734.42 84.89c-320 0-320-84.3-640-84.3C59.4.59 28.2 1.6 0 3.4V140h1280z' fill-opacity='.3'/%3E%3Cpath d='M0 24.31c43.46-5.69 94.56-9.25 158.42-9.25 320 0 320 89.24 640 89.24 256.13 0 307.28-57.16 481.58-80V140H0z' fill-opacity='.5'/%3E%3C/g%3E%3Cg fill='%232e5267' transform='translate(2560 0) scale(-1 1)'%3E%3Cpath d='M1280 3.4C1050.59 18 1019.4 84.89 734.42 84.89c-320 0-320-84.3-640-84.3C59.4.59 28.2 1.6 0 3.4V140h1280z' fill-opacity='.3'/%3E%3Cpath d='M0 24.31c43.46-5.69 94.56-9.25 158.42-9.25 320 0 320 89.24 640 89.24 256.13 0 307.28-57.16 481.58-80V140H0z' fill-opacity='.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.wave--footer-bottom::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2560 140' preserveAspectRatio='none'%3E%3Cg fill='%232e5267'%3E%3Cpath d='M1280 51.76c-201 12.49-242.43 53.4-513.58 53.4-320 0-320-57-640-57-48.85.01-90.21 1.35-126.42 3.6V140h1280z'/%3E%3C/g%3E%3Cg fill='%232e5267' transform='translate(2560 0) scale(-1 1)'%3E%3Cpath d='M1280 51.76c-201 12.49-242.43 53.4-513.58 53.4-320 0-320-57-640-57-48.85.01-90.21 1.35-126.42 3.6V140h1280z'/%3E%3C/g%3E%3C/svg%3E");
+  animation-duration: 40s;
+}
+
+@keyframes wave-drift {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave--footer-bottom::before,
+  .wave--footer-bottom::after {
+    animation: none;
+  }
 }
 
 .footer-bottom__copy {
-  margin-bottom: 7px;
+  margin-bottom: 2px;
 }
 
 .footer-bottom a {
