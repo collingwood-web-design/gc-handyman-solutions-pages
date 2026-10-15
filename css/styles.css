@@ -742,8 +742,7 @@ p {
 }
 
 .faq {
-  padding: 49px 0 70px;
-  background: #f3f8fb;
+  padding: 49px 0 80px;
   scroll-margin-top: 90px;
 }
 
@@ -826,7 +825,8 @@ p {
 }
 
 .contact {
-  padding: 49px 0 80px;
+  padding: 49px 0 70px;
+  background: #f3f8fb;
 }
 
 .contact .divider {
@@ -845,6 +845,7 @@ p {
   border: 1px solid var(--light-blue);
   border-bottom-width: 2px;
   border-radius: 10px;
+  background: var(--white);
 }
 
 .contact__details h3 {
