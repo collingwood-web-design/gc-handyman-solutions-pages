@@ -122,9 +122,8 @@
     });
   }
 
-  // Copyright date (matches the original site's full-date format)
-  var dateEl = document.getElementById("copyright-date");
-  if (dateEl) {
-    dateEl.textContent = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  var yearEl = document.getElementById("copyright-year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 })();
