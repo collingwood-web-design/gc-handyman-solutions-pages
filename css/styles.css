@@ -88,13 +88,15 @@ p {
 }
 
 .btn::after {
-  content: "\f105";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
+  content: "";
   position: absolute;
   top: 50%;
-  right: 0.7em;
-  transform: translateY(-50%);
+  right: 0.95em;
+  width: 0.4em;
+  height: 0.4em;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
   opacity: 0;
   transition: all 300ms ease;
 }
@@ -114,7 +116,7 @@ p {
 }
 
 .btn--tan {
-  color: var(--white);
+  color: var(--navy);
   background: var(--tan);
   border-color: var(--tan);
 }
@@ -123,6 +125,20 @@ p {
   color: var(--navy);
   background: var(--white);
   border-color: var(--white);
+}
+
+.btn--call {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue);
+  background: var(--white);
+  border-color: var(--blue);
+}
+
+.btn--call img {
+  width: 15px;
+  height: 15px;
 }
 
 .btn-row {
@@ -172,11 +188,9 @@ p {
   min-height: 26px;
 }
 
-.top-bar__phone i {
-  font-size: 21px;
-  color: var(--light-blue);
+.top-bar__phone img {
   width: 21px;
-  text-align: center;
+  height: 21px;
 }
 
 /* ---------- Main header ---------- */
@@ -271,7 +285,7 @@ p {
   position: relative;
   min-height: 426px;
   padding: 36px 0 63px;
-  background: url("https://media.cwd-cdn.com/gc-handyman-solutions/images/hero.jpg") center top / cover no-repeat;
+  background: url("https://media.cwd-cdn.com/gc-handyman-solutions/images/hero.webp") center top / cover no-repeat;
 }
 
 .hero__box {
@@ -290,7 +304,10 @@ p {
   color: var(--navy);
 }
 
-.hero__box .btn {
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 15px;
   margin-top: 17px;
 }
 
@@ -334,7 +351,7 @@ p {
   white-space: nowrap;
   padding-right: 3rem;
   font-weight: 400;
-  color: var(--white);
+  color: var(--navy);
   font-size: 17px;
 }
 
@@ -378,6 +395,19 @@ p {
 .card--blue {
   border: 1px solid var(--light-blue);
   border-bottom-width: 2px;
+}
+
+.card--link {
+  display: block;
+  color: inherit;
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+.card--link:hover,
+.card--link:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: var(--btn-shadow);
 }
 
 .card--tan {
@@ -444,7 +474,7 @@ p {
 
 .show-up h2 {
   font-size: 24px;
-  color: var(--white);
+  color: var(--navy);
 }
 
 /* ---------- Why choose us ---------- */
@@ -475,7 +505,7 @@ p {
   padding: 54px 0 101px;
   background:
     linear-gradient(180deg, rgba(0, 44, 70, 0.5) 0%, rgba(0, 44, 70, 0.5) 98%),
-    url("https://media.cwd-cdn.com/gc-handyman-solutions/images/maintenance-bg.jpg") center / cover no-repeat;
+    url("https://media.cwd-cdn.com/gc-handyman-solutions/images/maintenance-bg.webp") center / cover no-repeat;
   text-align: center;
 }
 
@@ -501,12 +531,10 @@ p {
   margin-top: 29px;
 }
 
-.card--white i {
-  display: block;
-  font-size: 34px;
-  line-height: 1;
-  color: var(--white);
-  margin: 0 0 30px;
+.card__glyph {
+  width: auto;
+  height: 34px;
+  margin: 0 auto 30px;
 }
 
 .card--white h4 {
@@ -636,6 +664,36 @@ p {
   margin: 6px auto 0;
 }
 
+.reviews__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.reviews__links a {
+  color: var(--link-blue);
+  text-decoration: underline;
+}
+
+.reviews__links .reviews__write {
+  padding: 5px 16px;
+  border: 2px solid var(--blue);
+  border-radius: 30px;
+  color: var(--blue);
+  text-decoration: none;
+  transition: all 300ms ease;
+}
+
+.reviews__links .reviews__write:hover {
+  color: var(--white);
+  background: var(--blue);
+}
+
 .reviews__slider {
   flex: 1;
   min-width: 0;
@@ -697,7 +755,7 @@ p {
 .review__date {
   display: block;
   font-size: 12px;
-  color: #8c8c8c;
+  color: #6b6b6b;
   line-height: 1.3;
 }
 
@@ -738,7 +796,7 @@ p {
   background: none;
   font-family: inherit;
   font-size: 12px;
-  color: #8c8c8c;
+  color: #6b6b6b;
   cursor: pointer;
 }
 
@@ -751,8 +809,7 @@ p {
   height: 40px;
   border: 0;
   background: none;
-  color: #8c8c8c;
-  font-size: 16px;
+  color: #6b6b6b;
   cursor: pointer;
 }
 
@@ -818,12 +875,11 @@ p {
   margin-bottom: 0;
 }
 
-.contact-list i {
+.contact-list__icon {
   flex: 0 0 22px;
-  font-size: 22px;
-  line-height: 1;
-  color: var(--light-blue);
-  text-align: center;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .contact-list h4 {
@@ -846,7 +902,7 @@ p {
   color: var(--white);
 }
 
-.contact-list__text i {
+.contact-list__text .contact-list__icon {
   margin-top: 3px;
 }
 
@@ -859,9 +915,12 @@ p {
   height: 32px;
   border-radius: 3px;
   background: var(--light-blue);
-  color: var(--navy);
-  font-size: 16px;
   transition: opacity 0.3s ease;
+}
+
+.social-icon img {
+  width: 16px;
+  height: 16px;
 }
 
 .social-icon:hover {
@@ -910,7 +969,6 @@ p {
   border-radius: 5px 0 0 5px;
   background: rgba(0, 0, 0, 0.4);
   color: var(--white);
-  font-size: 15px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
@@ -921,6 +979,20 @@ p {
   opacity: 1;
   visibility: visible;
 }
+
+/* ---------- Chevrons ---------- */
+
+.chevron {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.chevron--right { transform: rotate(45deg); margin-right: 3px; }
+.chevron--left { transform: rotate(-135deg); margin-left: 3px; }
+.chevron--up { transform: rotate(-45deg); margin-top: 4px; }
 
 /* ---------- Lightbox ---------- */
 
